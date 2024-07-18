@@ -78,7 +78,7 @@ class _ControlsState extends State<ControlsPage> {
           // Bottom Navigation Bar
           Consumer<ControlsOptionListProvider>(
             builder: (context, value, child) => AnimatedOpacity(
-              duration: const Duration(milliseconds: 500),
+              duration: const Duration(milliseconds: 300),
               // if any botton is clicked show the bottomNavBar
               opacity: value.clicked.contains(true) ? 1 : 0,
               child: Align(

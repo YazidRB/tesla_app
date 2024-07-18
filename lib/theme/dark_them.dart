@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:tesla_app/constants/colors.dart';
 
 ThemeData darkTheme = ThemeData(
+    fontFamily: 'Play',
     iconTheme: const IconThemeData().copyWith(color: constIconColor),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       backgroundColor: Colors.red,

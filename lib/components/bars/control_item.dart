@@ -9,12 +9,14 @@ class ControlItem extends StatefulWidget {
     required this.isOn,
     required this.val,
     this.onChanged,
+    required this.title,
   });
   final IconData icon;
   final bool isOn;
   final void Function()? onTap;
   final void Function(double)? onChanged;
   final int val;
+  final String title;
 
   @override
   State<ControlItem> createState() => _ControlItemState();
@@ -26,9 +28,12 @@ class _ControlItemState extends State<ControlItem> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text('AC'),
+        SizedBox(
+          child: Text(widget.title),
+          width: 50,
+        ),
         const SizedBox(
-          width: 20,
+          width: 10,
         ),
         ControlsButton(
           isOn: widget.isOn,

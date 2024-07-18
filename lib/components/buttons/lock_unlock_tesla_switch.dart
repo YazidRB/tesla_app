@@ -84,7 +84,9 @@ class _LockUnlockTeslaSwitchState extends State<LockUnlockTeslaSwitch> {
                     curve: Curves.bounceInOut,
                     child: Visibility(
                       visible: !_value,
-                      child: const Text('Locked'),
+                      child: const Text(
+                        'Locked',
+                      ),
                     ),
                   ),
                 ),

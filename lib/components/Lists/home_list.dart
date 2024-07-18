@@ -3,7 +3,16 @@ import 'package:gradient_borders/gradient_borders.dart';
 import 'package:tesla_app/constants/colors.dart';
 
 class HomeList extends StatelessWidget {
-  const HomeList({super.key});
+  HomeList({super.key});
+  final Map<String, IconData> listMetaData = <String, IconData>{
+    'Car': CupertinoIcons.car_detailed,
+    'Power': CupertinoIcons.power,
+    'Control': CupertinoIcons.game_controller,
+    'Fan': CupertinoIcons.wifi,
+    'Off': CupertinoIcons.volume_off,
+    'ON': CupertinoIcons.info,
+    'Air': CupertinoIcons.airplane,
+  };
 
   @override
   Widget build(BuildContext context) {
@@ -40,32 +49,32 @@ class HomeList extends StatelessWidget {
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 30),
         child: ListView.builder(
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: 8,
+          itemCount: listMetaData.length,
           shrinkWrap: true,
           itemBuilder: (context, index) => Container(
               padding: const EdgeInsets.symmetric(vertical: 20),
-              child: const Row(
+              child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Icon(CupertinoIcons.car_detailed),
-                      SizedBox(
+                      Icon(listMetaData.values.toList()[index]),
+                      const SizedBox(
                         width: 12,
                       ),
                       Text(
-                        'Control',
-                        style: TextStyle(
+                        listMetaData.keys.toList()[index],
+                        style: const TextStyle(
                             color: constIconColor,
                             fontSize: 16,
                             fontWeight: FontWeight.bold),
                       ),
                     ],
                   ),
-                  Icon(
+                  const Icon(
                     CupertinoIcons.back,
-                    textDirection: TextDirection.ltr,
+                    textDirection: TextDirection.rtl,
                   )
                 ],
               )),

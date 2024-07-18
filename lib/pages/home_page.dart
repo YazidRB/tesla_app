@@ -61,7 +61,7 @@ class _HomePageState extends State<HomePage> {
                   height: 70,
                 ),
                 // Tesla List options
-                const HomeList(),
+                HomeList(),
               ],
             ),
           ),

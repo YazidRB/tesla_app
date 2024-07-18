@@ -17,6 +17,7 @@ class _ControlsOptionListState extends State<ControlsOptionList> {
       builder: (context, value, child) => Column(
         children: <Widget>[
           ControlItem(
+            title: 'AC',
             val: value.controlLevel[0],
             isOn: value.clicked[0],
             onChanged: (val) => value.onChangeLevel(0, val),
@@ -27,6 +28,7 @@ class _ControlsOptionListState extends State<ControlsOptionList> {
             height: 30,
           ),
           ControlItem(
+            title: 'FAN',
             onChanged: (val) => value.onChangeLevel(1, val),
             val: value.controlLevel[1],
             isOn: value.clicked[1],
@@ -37,6 +39,7 @@ class _ControlsOptionListState extends State<ControlsOptionList> {
             height: 30,
           ),
           ControlItem(
+            title: 'Heat',
             onChanged: (val) => value.onChangeLevel(2, val),
             val: value.controlLevel[2],
             isOn: value.clicked[2],
@@ -47,16 +50,18 @@ class _ControlsOptionListState extends State<ControlsOptionList> {
             height: 30,
           ),
           ControlItem(
+            title: 'Auto',
             onChanged: (val) => value.onChangeLevel(3, val),
             val: value.controlLevel[3],
             isOn: value.clicked[3],
-            icon: CupertinoIcons.dot_square_fill,
+            icon: CupertinoIcons.power,
             onTap: () => value.clickedButton(3),
           ),
           const SizedBox(
             height: 30,
           ),
           ControlItem(
+            title: 'Power',
             onChanged: (val) => value.onChangeLevel(4, val),
             val: value.controlLevel[4],
             isOn: value.clicked[4],
@@ -67,10 +72,11 @@ class _ControlsOptionListState extends State<ControlsOptionList> {
             height: 30,
           ),
           ControlItem(
+            title: 'Alarm',
             onChanged: (val) => value.onChangeLevel(5, val),
             val: value.controlLevel[5],
             isOn: value.clicked[5],
-            icon: CupertinoIcons.dot_square_fill,
+            icon: CupertinoIcons.alarm,
             onTap: () => value.clickedButton(5),
           ),
         ],

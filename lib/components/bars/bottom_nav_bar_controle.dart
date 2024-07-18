@@ -22,8 +22,8 @@ class _BottomNavBarControleState extends State<BottomNavBarControle> {
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           height: 144,
-          decoration: BoxDecoration(
-            border: const GradientBoxBorder(
+          decoration: const BoxDecoration(
+            border: GradientBoxBorder(
                 width: 0.3,
                 gradient: LinearGradient(
                   colors: [
@@ -32,7 +32,7 @@ class _BottomNavBarControleState extends State<BottomNavBarControle> {
                   ],
                   begin: Alignment.topLeft,
                 )),
-            gradient: const LinearGradient(colors: [
+            gradient: LinearGradient(colors: [
               Color.fromRGBO(0, 0, 0, 0.2),
               Color.fromRGBO(47, 184, 255, 0.2),
               Color.fromRGBO(158, 236, 217, 0.2),
@@ -41,7 +41,8 @@ class _BottomNavBarControleState extends State<BottomNavBarControle> {
               0.9,
               1,
             ]),
-            borderRadius: BorderRadius.circular(40),
+            borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40), topRight: Radius.circular(40)),
           ),
           child: Column(
             children: [
